@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.accordion-container {
+    background: #FFF5E0;
+    padding: 10px;
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    border-radius: 10px;
+}
+
+.accordion-container .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header,
+.title-text {
+    padding-left: 10px;
+}
+
+.title-text {
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.left-header img {
+    width: 60px;
+    border-radius: 5px;
+}
+
+.left-header img:last-child {
+    box-shadow: rgba(87, 87, 99, 0.199) 3px 0px, rgba(87, 87, 99, 0.199) 7px 0px;
+
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.timeline-section {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+
+}
+
+.content {
+    display: none;
+    transition: all 2s linear;
+}
+
+.content-timeline .time-img img {
+    width: 250px;
+    padding: 15px 10px;
+    border-radius: 20px;
+
+}
+
+.time-text {
+    position: relative;
+    left: 10px;
+}
+
+.stamp-div {
+    position: relative;
+}
+
+.stamp-div .badge {
+    background: #FF6969;
+    width: fit-content;
+    padding: 1px 8px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.stamp-div .border {
+    border-bottom: 2px solid #FF6969;
+}
+
+.content-timeline:last-child .border:nth-child(2) {
+    display: none;
+}
+
+.stamp-text {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 0px 10px 0px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+    width: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff696981;
+    display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #FF6969;
+    display: none;
+}
+
+
+
+/* Style the scroll content */
+.timeline-section {
+    transition: all 0.2s;
+    position: relative;
+    width: 100%;
+    transition: all 1s;
+    user-select: none;
+    cursor: grab;
+}

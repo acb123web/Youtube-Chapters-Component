@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="accordion-container">
+        <div class="main-header">
+            <div class="left-header">
+                <img src="./img/one.webp"
+                    alt="" class="l-header-img">
+                <img src="./img/two.webp"
+                    alt="" class="l-header-img">
+                <img src="./img/three.webp"
+                    alt="" class="l-header-img">
+                    <img src="./img/one.webp"
+                    alt="" class="l-header-img">
+            </div>
+            <div class="right-header" id="right-header">
+                <h3>5 Chapters <i class="fa-solid fa-angle-down" id="angledown"></i></h3>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <div class="title-text">5 Chapters in This Video</div>
+
+            <div class="timeline-section">
+                <div class="content-timeline">
+                    <div class="time-img">
+                        <img
+                            src="./img/one.webp">
+                    </div>
+                    <div class="time-text">
+                        <div class="stamp-div">
+                            <div class="badge">00:00</div>
+                            <div class="border"></div>
+                        </div>
+                        <h3 class="stamp-text">Intro Section</h3>
+                    </div>
+                </div>
+                <div class="content-timeline">
+                    <div class="time-img">
+                        <img
+                            src="./img/two.webp">
+                    </div>
+                    <div class="time-text">
+                        <div class="stamp-div">
+                            <div class="badge">00:09</div>
+                            <div class="border"></div>
+                        </div>
+                        <h3 class="stamp-text">HTML Part</h3>
+                    </div>
+                </div>
+                <div class="content-timeline">
+                    <div class="time-img">
+                        <img
+                            src="./img/three.webp">
+                    </div>
+                    <div class="time-text">
+                        <div class="stamp-div">
+                            <div class="badge">02:40</div>
+                            <div class="border"></div>
+                        </div>
+                        <h3 class="stamp-text">CSS Part</h3>
+                    </div>
+                </div>
+                <div class="content-timeline">
+                    <div class="time-img">
+                        <img
+                            src="./img/one.webp">
+                    </div>
+                    <div class="time-text">
+                        <div class="stamp-div">
+                            <div class="badge">30:10</div>
+                            <div class="border"></div>
+                        </div>
+                        <h3 class="stamp-text">JavaScript Part</h3>
+                    </div>
+                </div>
+                <div class="content-timeline">
+                    <div class="time-img">
+                        <img
+                            src="./img/two.webp">
+                    </div>
+                    <div class="time-text">
+                        <div class="stamp-div">
+                            <div class="badge">01:23:21</div>
+                            <div class="border"></div>
+                        </div>
+                        <h3 class="stamp-text">Demo Part</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+
+ var content = document.getElementById("content");
+ var angledown = document.getElementById('angledown');
+ var rightheader = document.querySelector(".right-header");
+
+ rightheader.addEventListener("click", function(){
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        angledown.style.rotate = "180deg";
+    } else {
+        content.style.display = 'none';
+        angledown.style.rotate = "0deg";
+    }
+    
+ })
+
+
+const slider = document.querySelector('.timeline-section');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  
+});
+    </script>
+</body>
+
+</html>
